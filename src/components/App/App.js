@@ -1,26 +1,23 @@
-import React from 'react';
-import { useSelector} from 'react-redux';
-import s from './App.module.css';
+import React, {Suspense} from 'react';
+import { Routes, Route, Navigate} from 'react-router-dom';
 import Container from '../Container';
-import TodoList from '../TodoList';
-import TodoForm from '../TodoForm';
-import Modal from '../Modal';
-import {getModalStatus} from '../../redux/modal/modal-selectors';
+import HomeView from '../../views/HomeView';
+import ArchiveView from '../../views/ArchiveView';
 
 export default function App() {
-  const openModal = useSelector(getModalStatus);
-  console.log('openModal',openModal)
-  
-  // const [openModal, setOpenModal] = useState(false);
-  // const toggleModal = () => setOpenModal(state => !state);
     return (
       <Container>
-          {/* <button onClick={() => toggleModal()}>Open Modal</button> */}
-          {openModal &&
-            <Modal>
-              <TodoForm />
-            </Modal>}
-          <TodoList />
+        
+ <Suspense>
+          
+            <Routes>
+              <Route path="/" element={<Navigate replace to="home" />} />
+              <Route path="/home" element={<HomeView />}/>
+              <Route path="/archive" element={<ArchiveView />}/>
+            </Routes>
+        </Suspense>
+        
+       
       </Container>
     );
 }
