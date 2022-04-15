@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import * as actions from '../../redux/contacts/contacts-action';
+import * as actions from '../../redux/todo/todo-action';
 // import { deleteOperation } from '../../../redux/todo/todo-operations';
 import IconButton from '../IconButton';
 import { ReactComponent as EditIcon } from '../../icons/edit.svg';
@@ -24,7 +24,7 @@ return (
   <Wrapper>
     <Icon>
       <IconButton>
-        {<TodoIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+        {<TodoIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
       </IconButton>
     </Icon>
     <Name>{todos.name}</Name>
@@ -34,13 +34,13 @@ return (
     <Dates>{todos.dates}</Dates>
     <ButtonsWrapper>
       <IconButton>
-        {<EditIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+        {<EditIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
       </IconButton>
       <IconButton>
-        {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+        {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
       </IconButton>
       <IconButton>
-        {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+        {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
       </IconButton>      
     </ButtonsWrapper>
   </Wrapper>  

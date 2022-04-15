@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from '../../redux/contacts/contacts-action';
+import * as actions from '../../redux/todo/todo-action';
 import IconButton from '../IconButton';
 import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
 import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
@@ -14,10 +14,10 @@ import {
     Button
 } from './TodoList.styled';
 import TodoListItem from '../TodoListItem';
-import {getContacts} from '../../redux/contacts/contacts-selectors';
+import {getTodos} from '../../redux/todo/todo-selectors';
 
 export default function TodoList  () {
-    const todos = useSelector(getContacts);
+    const todos = useSelector(getTodos);
     const dispatch = useDispatch();
     console.log(todos)
     return (
@@ -30,10 +30,10 @@ export default function TodoList  () {
                 <InfoTitle>Dates</InfoTitle>
                 <ButtonsWrapper>
                 <IconButton>
-                    {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+                    {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
                 </IconButton>
                 <IconButton>
-                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteTodo(todos.id))} />}
                 </IconButton>
                 </ButtonsWrapper>
             </HeaderWrapper>

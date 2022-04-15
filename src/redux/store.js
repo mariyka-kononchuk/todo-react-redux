@@ -12,7 +12,7 @@ import {
     REGISTER
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import contactsReducer from './contacts/contacts-reducer';
+import todoReducer from './todo/todo-reducer';
 
 //for watching prevState, action, nextState in console
 const middleware = [...getDefaultMiddleware({
@@ -29,7 +29,7 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    contacts: contactsReducer,
+    todos: todoReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

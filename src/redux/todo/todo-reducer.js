@@ -1,22 +1,22 @@
 //with Redux Toolkit
 import { combineReducers } from 'redux';
 import {createReducer} from '@reduxjs/toolkit'
-import data from '../../../src/data/contacts.json';
-import {addContact, deleteContact, changeFilter} from './contacts-action'
+import data from '../../data/contacts.json';
+import {addTodo, deleteTodo} from './contacts-action'
 
 const items = createReducer(data, {
-    [addContact]: (state, {payload}) => [payload, ...state],
-    [deleteContact]: (state, {payload}) =>
+    [addTodo]: (state, {payload}) => [payload, ...state],
+    [deleteTodo]: (state, {payload}) =>
         state.filter(({id}) => id !== payload)
 })
 
-const filter = createReducer('', {
-   [changeFilter]:(_, {payload}) => payload, 
-})
+// const filter = createReducer('', {
+//    [changeFilter]:(_, {payload}) => payload, 
+// })
 
 export default combineReducers({
     items,
-    filter
+    // filter
 });
 
 

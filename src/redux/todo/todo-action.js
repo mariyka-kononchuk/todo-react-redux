@@ -2,16 +2,16 @@
 import { createAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-export const addContact = createAction('app/addContact', ({name,number}) => ({
+export const addTodo = createAction('app/addTodo', ({name,category, content}) => ({
     payload: {
         id: uuidv4(),
-        name,
-        number
+        category,
+        content
     }   
 }))
 
-export const deleteContact = createAction('app/deleteContact');
-export const changeFilter = createAction('app/changeFilter');
+export const deleteTodo = createAction('app/deleteTodo');
+//export const changeFilter = createAction('app/changeFilter');
 
     
 

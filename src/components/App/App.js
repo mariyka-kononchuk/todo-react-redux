@@ -5,17 +5,19 @@ import ContactForm from '../ContactForm';
 import Filter from '../Filter';
 import ContactList from '../ContactList';
 import TodoList from '../TodoList';
+import TodoForm from '../TodoForm';
 
 export default function App () {
     return (
       <Container>
         <div>
           {/* <h1 className={s.titlePhonebbok}>Phonebook</h1> */}
-          <ContactForm />
+          {/* <ContactForm /> */}
           {/* <h2 className={s.titleContacts}>Contacts</h2> */}
-          <Filter />
+          {/* <Filter /> */}
           {/* <ContactList /> */}
           <TodoList />
+          <TodoForm />
         </div>
       </Container>
     );

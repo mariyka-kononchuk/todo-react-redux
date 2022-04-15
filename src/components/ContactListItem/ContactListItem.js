@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import * as actions from '../../redux/contacts/contacts-action'
+import * as actions from '../../redux/todo/todo-action'
 import s from './ContactListItem.module.css';
 
 export default function ContactListItem({ contacts }) {

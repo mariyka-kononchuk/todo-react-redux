@@ -1,9 +1,9 @@
 //1-й вариант
-const ADD_CONTACT = 'app/addContact';
-const DELETE_CONTACT = 'app/deleteContact';
-const CHANGE_FILTER = 'app/changeFilter';
+const ADD_TODO = 'app/addTodo';
+const DELETE_TODO = 'app/deleteTodo';
+// const CHANGE_FILTER = 'app/changeFilter';
 
-export default { ADD_CONTACT, DELETE_CONTACT, CHANGE_FILTER };
+export default { ADD_TODO, DELETE_TODO };
 
 //2-й вариант
 // export default {
