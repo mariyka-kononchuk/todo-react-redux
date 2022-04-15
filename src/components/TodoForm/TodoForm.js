@@ -10,14 +10,13 @@ import {
     Textarea,
     Button
 } from './TodoForm.styled';
-//import PropTypes from 'prop-types';
+
 
 export default function SignupForm() {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [category, setCategory] = useState('Task');
     const [content, setContent] = useState('');
-    //const [dates, setDates] = useState('');
     
     const handleChange = e => {
         const { name, value } = e.target;
@@ -54,27 +53,13 @@ export default function SignupForm() {
         setName('');
         setCategory('Task');
         setContent('');
-       // setDates('');
     }
 
     return (
-        // <form  onSubmit={handleSubmit} >
-        //         <label >
-        //             <span>Name</span>
-        //             <input
-                        
-        //                 type="text"
-        //                 name="name"
-        //                 value={name}
-        //                 onChange={handleChange}
         //                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         //                 title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
         //                 required
-        //             />
-        //         </label>
-        //         <label >
-        //             <span >Number</span>
-        //             <input
+        
                         
         //                 type="tel"
         //                 name="number"
@@ -83,10 +68,8 @@ export default function SignupForm() {
         //                 pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         //                 title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
         //                 required
-        //             />
-        //         </label>
-        //         <button  type="submit">Add contact</button>
-        //     </form>
+       
+            
         <Form onSubmit={handleSubmit}>
             <Input 
                 type="text"
@@ -112,6 +95,8 @@ export default function SignupForm() {
                 placeholder="Content..."></Textarea>
             <Button type="submit">Create note</Button>
         </Form>
+        
+        
     )
 }
 // const mapStateToProps = state => {
