@@ -44,7 +44,7 @@ export default function TodoList  () {
                 </ListItem>
             ))}
             </List>
-            <Button onClick={() => dispatch(actions.addContact(todos.id))}>Create note</Button>
+            <Button onClick={() => dispatch(actions.addTodo(todos.id))}>Create note</Button>
         </div>
     )
 }

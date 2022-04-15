@@ -1,8 +1,8 @@
 //with Redux Toolkit
 import { combineReducers } from 'redux';
 import {createReducer} from '@reduxjs/toolkit'
-import data from '../../data/contacts.json';
-import {addTodo, deleteTodo} from './contacts-action'
+import data from '../../data/todos.json';
+import {addTodo, deleteTodo} from './todo-action'
 
 const items = createReducer(data, {
     [addTodo]: (state, {payload}) => [payload, ...state],

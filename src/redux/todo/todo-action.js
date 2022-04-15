@@ -1,12 +1,17 @@
 //with Redux Toolkit
 import { createAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
+import dateFormat from "dateformat";
 
-export const addTodo = createAction('app/addTodo', ({name,category, content}) => ({
+export const addTodo = createAction('app/addTodo', ({name,category, content, dates}) => ({
     payload: {
         id: uuidv4(),
+        date: dateFormat(new Date(), "mmmm dS, yyyy"),
+        name,
         category,
-        content
+        content,
+        dates,
+        status:'active'
     }   
 }))
 

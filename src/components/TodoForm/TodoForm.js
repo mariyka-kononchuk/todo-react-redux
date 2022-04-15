@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import dateFormat from "dateformat";
 import * as actions from '../../redux/todo/todo-action';
 import {
     Form,
@@ -11,23 +12,24 @@ import {
 } from './TodoForm.styled';
 //import PropTypes from 'prop-types';
 
-export default function SignupForm({ onAddContact }) {
+export default function SignupForm() {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('Task');
     const [content, setContent] = useState('');
+    //const [dates, setDates] = useState('');
     
     const handleChange = e => {
-        const {name, value} = e.target
+        const { name, value } = e.target;
         switch (name) {
             case 'name':
-                setName(value);
+                setName(value.trim());
                 break;
             case 'category':
                 setCategory(value);
                 break;
             case 'content':
-                setContent(value);
+                setContent(value.trim());
                 break;
             default:
                 return;
@@ -36,15 +38,23 @@ export default function SignupForm({ onAddContact }) {
 
      const handleSubmit = e => {
          e.preventDefault();
-         dispatch(actions.addTodo({name, category, content}))
-       // onAddContact({ name, number });
+         const datesFound = content.match(/\d{1,2}\D\d{1,2}\D(\d{4}|\d{2})/g);
+         let contentDates = [];
+         let dates = ''
+         if (datesFound !== null) {
+             datesFound.map(item => contentDates.push(dateFormat(item, "m/d/yyyy")))
+             dates = contentDates.join(', ');
+         }
+         
+        dispatch(actions.addTodo({name, category, content, dates}))
         reset();
     }
 
     const reset = () => {
         setName('');
-        setCategory('');
+        setCategory('Task');
         setContent('');
+       // setDates('');
     }
 
     return (
@@ -84,10 +94,14 @@ export default function SignupForm({ onAddContact }) {
                 value={name}
                 onChange={handleChange}
             />
-            <Select name="category" value={category} onChange={handleChange}>
-                <option value="Task">Task</option>
-                <option value="Random Thought">Random Thought</option>
-                <option value="Idea">Idea</option>
+            <Select
+                name="category"
+                value={category}
+                onChange={handleChange}
+                required>
+                    <option value="Task">Task</option>
+                    <option value="Random Thought">Random Thought</option>
+                    <option value="Idea">Idea</option>
             </Select>
             <Textarea
                 rows="3"

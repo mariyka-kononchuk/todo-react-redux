@@ -1,9 +1,6 @@
 import React from 'react';
 import s from './App.module.css';
 import Container from '../Container';
-import ContactForm from '../ContactForm';
-import Filter from '../Filter';
-import ContactList from '../ContactList';
 import TodoList from '../TodoList';
 import TodoForm from '../TodoForm';
 

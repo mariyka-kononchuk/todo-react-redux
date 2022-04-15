@@ -24,7 +24,7 @@ const middleware = [...getDefaultMiddleware({
 
 //localStorage
 const persistConfig = {
-    key: 'contacts',
+    key: 'todos',
     storage
 }
 
