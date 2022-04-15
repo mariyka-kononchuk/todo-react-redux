@@ -1,24 +1,28 @@
 import React from 'react';
+import { useSelector} from 'react-redux';
 import s from './App.module.css';
 import Container from '../Container';
 import TodoList from '../TodoList';
 import TodoForm from '../TodoForm';
+import Modal from '../Modal';
+import {getModalStatus} from '../../redux/modal/modal-selectors';
 
-export default function App () {
+export default function App() {
+  const openModal = useSelector(getModalStatus);
+  console.log('openModal',openModal)
+  
+  // const [openModal, setOpenModal] = useState(false);
+  // const toggleModal = () => setOpenModal(state => !state);
     return (
       <Container>
-        <div>
-          {/* <h1 className={s.titlePhonebbok}>Phonebook</h1> */}
-          {/* <ContactForm /> */}
-          {/* <h2 className={s.titleContacts}>Contacts</h2> */}
-          {/* <Filter /> */}
-          {/* <ContactList /> */}
+          {/* <button onClick={() => toggleModal()}>Open Modal</button> */}
+          {openModal &&
+            <Modal>
+              <TodoForm />
+            </Modal>}
           <TodoList />
-          <TodoForm />
-        </div>
       </Container>
     );
-  
 }
 
 

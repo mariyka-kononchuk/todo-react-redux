@@ -34,13 +34,13 @@ return (
     <Dates>{todos.dates}</Dates>
     <ButtonsWrapper>
       <IconButton>
-        {<EditIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
+        {<EditIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.editTodo(todos.id))} />}
       </IconButton>
       <IconButton>
-        {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
+        {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.archiveTodo(todos.id))} />}
       </IconButton>
       <IconButton>
-        {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
+        {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteTodo(todos.id))} />}
       </IconButton>      
     </ButtonsWrapper>
   </Wrapper>  

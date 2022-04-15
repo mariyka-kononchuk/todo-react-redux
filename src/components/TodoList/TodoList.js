@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../redux/todo/todo-action';
+import {toggleModal} from '../../redux/modal/modal-action';
 import IconButton from '../IconButton';
 import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
 import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
@@ -14,7 +15,8 @@ import {
     Button
 } from './TodoList.styled';
 import TodoListItem from '../TodoListItem';
-import {getTodos} from '../../redux/todo/todo-selectors';
+import { getTodos } from '../../redux/todo/todo-selectors';
+
 
 export default function TodoList  () {
     const todos = useSelector(getTodos);
@@ -44,7 +46,7 @@ export default function TodoList  () {
                 </ListItem>
             ))}
             </List>
-            <Button onClick={() => dispatch(actions.addTodo(todos.id))}>Create note</Button>
+            <Button onClick={() => dispatch(toggleModal())}>Create note</Button>
         </div>
     )
 }

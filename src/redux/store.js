@@ -13,6 +13,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import todoReducer from './todo/todo-reducer';
+import modalReducer from './modal/modal-reducer';
 
 //for watching prevState, action, nextState in console
 const middleware = [...getDefaultMiddleware({
@@ -30,6 +31,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     todos: todoReducer,
+    modal:modalReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

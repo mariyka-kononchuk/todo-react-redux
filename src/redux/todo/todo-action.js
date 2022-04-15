@@ -6,7 +6,7 @@ import dateFormat from "dateformat";
 export const addTodo = createAction('app/addTodo', ({name,category, content, dates}) => ({
     payload: {
         id: uuidv4(),
-        date: dateFormat(new Date(), "mmmm dS, yyyy"),
+        date: dateFormat(new Date(), "mmmm d, yyyy"),
         name,
         category,
         content,
@@ -16,6 +16,8 @@ export const addTodo = createAction('app/addTodo', ({name,category, content, dat
 }))
 
 export const deleteTodo = createAction('app/deleteTodo');
+export const archiveTodo = createAction('app/archiveTodo');
+export const editTodo = createAction('app/editTodo');
 //export const changeFilter = createAction('app/changeFilter');
 
     
