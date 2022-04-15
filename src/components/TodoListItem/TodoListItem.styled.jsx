@@ -150,11 +150,10 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const UnpackButton = styled.button`
-  display: block;
-  margin-left: auto;
+  display: inline-block;
 
   text-align: center;
-  width: 100px;
+  width: 80px;
   height: 24px;
   background-color: white;
   color: rgb(92, 90, 90);
@@ -167,14 +166,6 @@ export const UnpackButton = styled.button`
 
   border-radius: 5px;
   border: 1px solid rgb(165, 163, 163);
-
-  @media screen and (min-width: 768px) {
-    width: 120px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 100px;
-  }
 
   cursor: pointer;
 

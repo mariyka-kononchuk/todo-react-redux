@@ -46,7 +46,7 @@ export default function TodoList() {
                         {<ArchiveIcon width="18" height="18" fill="black"  />}
                     </StyledLink>
                 <IconButton>
-                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteTodo(todos.id))} />}
+                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteAllTodo())} />}
                 </IconButton>
                 </ButtonsWrapper>
             </HeaderWrapper>
@@ -59,7 +59,9 @@ export default function TodoList() {
             </List>
             {location.pathname === '/home' ?
                 <Button onClick={() => dispatch(toggleModal())}>Create note</Button>:
-                null}
+                <StyledLink to="/home">
+                    <Button>Home</Button>
+                </StyledLink>}
         </div>
     )
 }

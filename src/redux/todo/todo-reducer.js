@@ -2,12 +2,20 @@
 import { combineReducers } from 'redux';
 import {createReducer} from '@reduxjs/toolkit'
 import data from '../../data/todos.json';
-import {addTodo, deleteTodo, archiveTodo, editTodo, unpackTodo} from './todo-action'
+import {
+    addTodo,
+    deleteTodo,
+    deleteAllTodo,
+    archiveTodo,
+    editTodo,
+    unpackTodo
+} from './todo-action'
 
 const items = createReducer(data, {
     [addTodo]: (state, { payload }) => [payload, ...state],
     [deleteTodo]: (state, { payload }) =>
         state.filter(({ id }) => id !== payload),
+    [deleteAllTodo]: (state) => [],
     [archiveTodo]: (state, { payload }) =>
         state.map(todo =>
             todo.id === payload ? { ...todo, status: 'archived' } : todo,
