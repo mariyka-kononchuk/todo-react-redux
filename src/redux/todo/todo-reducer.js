@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux';
 import {createReducer} from '@reduxjs/toolkit'
 import data from '../../data/todos.json';
-import {addTodo, deleteTodo, archiveTodo, editTodo} from './todo-action'
+import {addTodo, deleteTodo, archiveTodo, editTodo, unpackTodo} from './todo-action'
 
 const items = createReducer(data, {
     [addTodo]: (state, { payload }) => [payload, ...state],
@@ -11,6 +11,10 @@ const items = createReducer(data, {
     [archiveTodo]: (state, { payload }) =>
         state.map(todo =>
             todo.id === payload ? { ...todo, status: 'archived' } : todo,
+        ),
+    [unpackTodo]: (state, { payload }) =>
+        state.map(todo =>
+            todo.id === payload ? { ...todo, status: 'active' } : todo,
         ),
     [editTodo]: (state, { payload }) =>
         state.map(todo =>

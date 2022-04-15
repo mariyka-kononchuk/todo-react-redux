@@ -148,3 +148,47 @@ export const ButtonsWrapper = styled.div`
     margin-left: 55px;
   }
 `;
+
+export const UnpackButton = styled.button`
+  display: block;
+  margin-left: auto;
+
+  text-align: center;
+  width: 100px;
+  height: 24px;
+  background-color: white;
+  color: rgb(92, 90, 90);
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.117;
+
+  border-radius: 5px;
+  border: 1px solid rgb(165, 163, 163);
+
+  @media screen and (min-width: 768px) {
+    width: 120px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100px;
+  }
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(165, 163, 163);
+    color: white;
+    border: 2px solid rgb(165, 163, 163);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid rgb(165, 163, 163);
+    background-color: white;
+    color: rgb(92, 90, 90);
+  }
+`;

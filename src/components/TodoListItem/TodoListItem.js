@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import * as actions from '../../redux/todo/todo-action';
 // import { deleteOperation } from '../../../redux/todo/todo-operations';
 import IconButton from '../IconButton';
@@ -15,35 +16,39 @@ import {
   Category,
   Content,
   Dates,
-  ButtonsWrapper
+  ButtonsWrapper,
+  UnpackButton
 } from './TodoListItem.styled';
 
 export default function TodoListItem({ todos }) {
-const dispatch = useDispatch();
-return (
-  <Wrapper>
-    <Icon>
-      <IconButton>
-        {<TodoIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
-      </IconButton>
-    </Icon>
-    <Name>{todos.name}</Name>
-    <Date>{todos.date}</Date>
-    <Category>{todos.category}</Category>
-    <Content>{todos.content}</Content>
-    <Dates>{todos.dates}</Dates>
-    <ButtonsWrapper>
-      <IconButton>
-        {<EditIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.editTodo(todos.id))} />}
-      </IconButton>
-      <IconButton>
-        {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.archiveTodo(todos.id))} />}
-      </IconButton>
-      <IconButton>
-        {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteTodo(todos.id))} />}
-      </IconButton>      
-    </ButtonsWrapper>
-  </Wrapper>  
+  const location = useLocation();
+  const dispatch = useDispatch();
+  return (
+    <Wrapper>
+      <Icon>
+        <IconButton>
+          {<TodoIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
+        </IconButton>
+      </Icon>
+      <Name>{todos.name}</Name>
+      <Date>{todos.date}</Date>
+      <Category>{todos.category}</Category>
+      <Content>{todos.content}</Content>
+      <Dates>{todos.dates}</Dates>
+      {location.pathname === '/home' ?
+        <ButtonsWrapper>
+        <IconButton>
+          {<EditIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.editTodo(todos.id))} />}
+        </IconButton>
+        <IconButton>
+          {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.archiveTodo(todos.id))} />}
+        </IconButton>
+        <IconButton>
+          {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteTodo(todos.id))} />}
+        </IconButton>      
+        </ButtonsWrapper>:
+        <UnpackButton onClick={() => dispatch(actions.unpackTodo(todos.id))}>Unpack</UnpackButton>}
+    </Wrapper>  
   )
 } 
 

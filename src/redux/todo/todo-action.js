@@ -17,6 +17,7 @@ export const addTodo = createAction('app/addTodo', ({name,category, content, dat
 
 export const deleteTodo = createAction('app/deleteTodo');
 export const archiveTodo = createAction('app/archiveTodo');
+export const unpackTodo = createAction('app/unpackTodo');
 export const editTodo = createAction('app/editTodo');
 //export const changeFilter = createAction('app/changeFilter');
 
