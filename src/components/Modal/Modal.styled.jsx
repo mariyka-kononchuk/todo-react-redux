@@ -40,7 +40,7 @@ export const WindowModal = styled.div`
   border-radius: 5px;
 
   @media screen and (min-width: 768px) {
-    padding: 40px 40px;
+    padding: 30px 30px;
     width: 750px;
     min-height: 120px;
   }

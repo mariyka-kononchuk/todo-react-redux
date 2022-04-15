@@ -51,9 +51,9 @@ export default function TodoList() {
                 </ButtonsWrapper>
             </HeaderWrapper>
             <List>
-            {todos.map((todos) => (
-                <ListItem key={todos.id}  >
-                    <TodoListItem todos={todos} />
+            {todos.map((todo) => (
+                <ListItem key={todo.id}  >
+                    <TodoListItem todo={todo} />
                 </ListItem>
             ))}
             </List>

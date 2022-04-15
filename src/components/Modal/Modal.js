@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import {Overlay, WindowModal} from './Modal.styled';
 import { toggleModal } from '../../redux/modal/modal-action';
 import IconButton from '../IconButton';
-import { ReactComponent as CloseIcon } from '../../icons/lamp.svg';
+import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 const modalRoot = document.querySelector('#modal-root');
 
 

@@ -8,7 +8,8 @@ import {
     deleteAllTodo,
     archiveTodo,
     editTodo,
-    unpackTodo
+    unpackTodo,
+    addEditItem
 } from './todo-action'
 
 const items = createReducer(data, {
@@ -26,17 +27,29 @@ const items = createReducer(data, {
         ),
     [editTodo]: (state, { payload }) =>
         state.map(todo =>
-            todo.id === payload.id ? payload : todo,
+            todo.id === payload.id ?
+                {
+                    ...todo,
+                    name: payload.name,
+                    category: payload.category,
+                    content: payload.content,
+                    dates: payload.dates,
+                }
+                : todo,
         )
 });
 
 // const filter = createReducer('', {
-//    [changeFilter]:(_, {payload}) => payload, 
+//    [changeFilter]:(_, {payload}) => payload,
 // })
+const initialState = {isEdited:false};
+const editItem = createReducer(initialState, {
+    [addEditItem]: (state, { payload }) => payload, isEdited: true 
+});
 
 export default combineReducers({
     items,
-    // filter
+    editItem
 });
 
 

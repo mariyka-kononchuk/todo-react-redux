@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import dateFormat from "dateformat";
 import * as actions from '../../redux/todo/todo-action';
+import { getEditItem } from '../../redux/todo/todo-selectors';
 import {
     Form,
     Input,
@@ -9,14 +10,18 @@ import {
     Option,
     Textarea,
     Button
-} from './TodoForm.styled';
+} from './EditTodoForm.styled';
 
 
-export default function TodoForm() {
+export default function EditTodoForm() {
+    
     const dispatch = useDispatch();
-    const [name, setName] = useState('');
-    const [category, setCategory] = useState('Task');
-    const [content, setContent] = useState('');
+    const editItem = useSelector(getEditItem);
+    const id = editItem.id;
+
+    const [name, setName] = useState(editItem.name);
+    const [category, setCategory] = useState(editItem.category);
+    const [content, setContent] = useState(editItem.content);
     
     const handleChange = e => {
         const { name, value } = e.target;
@@ -45,7 +50,7 @@ export default function TodoForm() {
              dates = contentDates.join(', ');
          }
          
-        dispatch(actions.addTodo({name, category, content, dates}))
+        dispatch(actions.editTodo({id, name, category, content, dates}))
         reset();
     }
 
@@ -55,21 +60,7 @@ export default function TodoForm() {
         setContent('');
     }
 
-    return (
-        //                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        //                 title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-        //                 required
-        
-                        
-        //                 type="tel"
-        //                 name="number"
-        //                 value={number}
-        //                 onChange={handleChange}
-        //                 pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        //                 title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-        //                 required
-       
-            
+    return (       
         <Form onSubmit={handleSubmit}>
             <Input 
                 type="text"
