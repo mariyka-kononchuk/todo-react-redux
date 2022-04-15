@@ -9,7 +9,8 @@ import {
     archiveTodo,
     editTodo,
     unpackTodo,
-    addEditItem
+    addEditItem,
+    deleteEditItem,
 } from './todo-action'
 
 const items = createReducer(data, {
@@ -44,7 +45,8 @@ const items = createReducer(data, {
 // })
 const initialState = {isEdited:false};
 const editItem = createReducer(initialState, {
-    [addEditItem]: (state, { payload }) => payload, isEdited: true 
+    [addEditItem]: (state, { payload }) => payload,
+    [deleteEditItem]: (state, { _ }) => initialState,
 });
 
 export default combineReducers({

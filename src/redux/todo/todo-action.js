@@ -20,7 +20,14 @@ export const deleteAllTodo = createAction('app/deleteAllTodo');
 export const archiveTodo = createAction('app/archiveTodo');
 export const unpackTodo = createAction('app/unpackTodo');
 export const editTodo = createAction('app/editTodo');
-export const addEditItem = createAction('app/addEditItem');
+export const addEditItem = createAction('app/addEditItem',
+(data) => ({
+    payload: {
+        data,
+        isEdit:true
+    }   
+    }));
+export const deleteEditItem = createAction('app/deleteEditItem');
 //export const changeFilter = createAction('app/changeFilter');
 
     
