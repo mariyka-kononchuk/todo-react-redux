@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -61,7 +62,7 @@ export const ButtonsWrapper = styled.div`
     margin-left: 74px;
   }
 `;
-
+export const StyledLink = styled(NavLink)``;
 export const List = styled.ul`
   margin: 0;
   padding: 0;

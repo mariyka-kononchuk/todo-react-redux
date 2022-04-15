@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import * as actions from '../../redux/todo/todo-action';
 import {toggleModal} from '../../redux/modal/modal-action';
 import IconButton from '../IconButton';
@@ -12,15 +13,25 @@ import {
     ButtonsWrapper,
     List,
     ListItem,
-    Button
+    Button,
+    StyledLink
 } from './TodoList.styled';
 import TodoListItem from '../TodoListItem';
-import { getTodos } from '../../redux/todo/todo-selectors';
+import { getActiveTodos, getArchiveTodos } from '../../redux/todo/todo-selectors';
 
 
-export default function TodoList  () {
-    const todos = useSelector(getTodos);
+export default function TodoList() {
+    const activeTodos = useSelector(getActiveTodos);
+    const archivedTodos = useSelector(getArchiveTodos);
+    let todos = [];
     const dispatch = useDispatch();
+    const location = useLocation();
+    if (location.pathname === '/home') {
+        todos = activeTodos;
+    }
+    if (location.pathname === '/archive') {
+        todos = archivedTodos;
+    }
     console.log(todos)
     return (
         <div>
@@ -31,9 +42,9 @@ export default function TodoList  () {
                 <InfoTitle>Content</InfoTitle>
                 <InfoTitle>Dates</InfoTitle>
                 <ButtonsWrapper>
-                <IconButton>
-                    {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addTodo(todos.id))} />}
-                </IconButton>
+                    <StyledLink to="/archive">
+                        {<ArchiveIcon width="18" height="18" fill="black"  />}
+                    </StyledLink>
                 <IconButton>
                     {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteTodo(todos.id))} />}
                 </IconButton>
@@ -46,7 +57,9 @@ export default function TodoList  () {
                 </ListItem>
             ))}
             </List>
-            <Button onClick={() => dispatch(toggleModal())}>Create note</Button>
+            {location.pathname === '/home' ?
+                <Button onClick={() => dispatch(toggleModal())}>Create note</Button>:
+                null}
         </div>
     )
 }

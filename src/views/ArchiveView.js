@@ -1,10 +1,11 @@
 import React from 'react';
+import TodoList from '../components/TodoList';
+import Section from '../components/Section';
 
-
-export default function HomeView() {
+export default function ArchiveView() {
     return (
-        <div>
-        
-        </div>
+        <Section>
+            <TodoList />
+        </Section>
     )
 }
