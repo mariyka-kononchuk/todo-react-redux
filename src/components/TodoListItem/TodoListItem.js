@@ -2,11 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import * as actions from '../../redux/contacts/contacts-action';
 // import { deleteOperation } from '../../../redux/todo/todo-operations';
-import IconButton from '../../IconButton';
-import { ReactComponent as EditIcon } from '../../../icons/edit.svg';
-import { ReactComponent as ArchiveIcon } from '../../../icons/archive.svg';
-import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
-import { ReactComponent as TodoIcon } from '../../../icons/buy.svg';
+import IconButton from '../IconButton';
+import { ReactComponent as EditIcon } from '../../icons/edit.svg';
+import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
+import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
+import { ReactComponent as TodoIcon } from '../../icons/buy.svg';
 import {
   Wrapper,
   Icon,
@@ -16,7 +16,7 @@ import {
   Content,
   Dates,
   ButtonsWrapper
-} from './TodoItem.styled';
+} from './TodoListItem.styled';
 
 export default function TodoListItem({ todos }) {
 const dispatch = useDispatch();

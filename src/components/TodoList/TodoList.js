@@ -1,42 +1,62 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import s from './ContactList.module.css';
-import ContactListItem from '../ContactListItem';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../../redux/contacts/contacts-action';
+import IconButton from '../IconButton';
+import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
+import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
+import {
+    HeaderWrapper,
+    Name,
+    InfoTitle,
+    ButtonsWrapper,
+    List,
+    ListItem,
+    Button
+} from './TodoList.styled';
+import TodoListItem from '../TodoListItem';
+import {getContacts} from '../../redux/contacts/contacts-selectors';
 
-export default function ContactList  () {
-const contacts = useSelector(({contacts:{items, filter}}) => getVisibleContacts(items, filter))
+export default function TodoList  () {
+    const todos = useSelector(getContacts);
+    const dispatch = useDispatch();
+    console.log(todos)
     return (
-        <ul className={s.list}>
-            {contacts.map((contacts) => (
-                <li key={contacts.id}  >
-                    <ContactListItem contacts={contacts} />
-                </li>
+        <div>
+            <HeaderWrapper>
+                <Name>Name</Name>
+                <InfoTitle>Created</InfoTitle>
+                <InfoTitle>Category</InfoTitle>
+                <InfoTitle>Content</InfoTitle>
+                <InfoTitle>Dates</InfoTitle>
+                <ButtonsWrapper>
+                <IconButton>
+                    {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+                </IconButton>
+                <IconButton>
+                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.addContact(todos.id))} />}
+                </IconButton>
+                </ButtonsWrapper>
+            </HeaderWrapper>
+            <List>
+            {todos.map((todos) => (
+                <ListItem key={todos.id}  >
+                    <TodoListItem todos={todos} />
+                </ListItem>
             ))}
-        </ul>
+            </List>
+            <Button onClick={() => dispatch(actions.addContact(todos.id))}>Create note</Button>
+        </div>
     )
 }
 
- const getVisibleContacts = (allContacts, filter) => {
-    const normilizedFilter = filter.toLowerCase();
-    return allContacts.filter(contact =>
-      contact.name.toLowerCase().includes(normilizedFilter));
-  }
-
-// const mapStateToProps = ({contacts:{items, filter}}) => {
-//     return {
-//         contacts: getVisibleContacts(items, filter)
-//     }
-//   }
 
 
-
-ContactList.propTypes = {
-    contacts: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string,
-        })
-    ),
-};
+// ContactList.propTypes = {
+//     todos: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             id: PropTypes.string,
+//         })
+//     ),
+// };
 
  

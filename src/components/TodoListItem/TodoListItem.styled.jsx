@@ -66,6 +66,24 @@ export const Date = styled.p`
   }
 `;
 
+export const Category = styled.p`
+  display: block;
+  width: 100px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.167;
+  letter-spacing: 0.06em;
+
+  @media screen and (min-width: 768px) {
+    width: 80px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 145px;
+  }
+`;
+
 export const Content = styled.p`
   margin-right: 10px;
   white-space: nowrap;
@@ -84,6 +102,38 @@ export const Content = styled.p`
 
   @media screen and (min-width: 1024px) {
     width: 135px;
+  }
+
+  &:hover {
+    white-space: normal;
+    margin-right: 0;
+    overflow: visible;
+    width: 145px;
+    @media screen and (min-width: 768px) {
+      width: 100px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 145px;
+    }
+  }
+`;
+
+export const Dates = styled.p`
+  display: block;
+  width: 100px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.167;
+  letter-spacing: 0.06em;
+
+  @media screen and (min-width: 768px) {
+    width: 80px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 145px;
   }
 `;
 

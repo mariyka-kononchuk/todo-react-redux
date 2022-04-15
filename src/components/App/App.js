@@ -10,11 +10,11 @@ export default function App () {
     return (
       <Container>
         <div>
-          <h1 className={s.titlePhonebbok}>Phonebook</h1>
+          {/* <h1 className={s.titlePhonebbok}>Phonebook</h1> */}
           <ContactForm />
-          <h2 className={s.titleContacts}>Contacts</h2>
+          {/* <h2 className={s.titleContacts}>Contacts</h2> */}
           <Filter />
-          <ContactList />
+          {/* <ContactList /> */}
           <TodoList />
         </div>
       </Container>
