@@ -145,6 +145,7 @@ export const Dates = styled.p`
 
 export const ButtonsWrapper = styled.div`
   display: flex;
+  align-items: center;
   margin-left: 55px;
   @media screen and (min-width: 768px) {
     margin-left: 75px;

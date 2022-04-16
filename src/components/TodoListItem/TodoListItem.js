@@ -10,9 +10,7 @@ import { toggleModal } from '../../redux/modal/modal-action';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
 
-
 import {
-  Wrapper,
   IconWrapper,
   Name,
   Date,
@@ -27,7 +25,7 @@ export default function TodoListItem({ todo }) {
   const location = useLocation();
   const dispatch = useDispatch();
   return (
-    <Wrapper>
+    <>
       <IconWrapper>
         {<Icon width="20" height="20" fill="whitesmoke" category = {todo.category} />}
       </IconWrapper>
@@ -45,7 +43,7 @@ export default function TodoListItem({ todo }) {
                 color: grey[700],
                 fontSize: 25,
                 "&:hover": {
-                color: grey[500],
+                  color: grey[500],
                 }
               }}
               onClick={() => {
@@ -55,11 +53,11 @@ export default function TodoListItem({ todo }) {
           </IconButton>
           <IconButton>
             {<ArchiveIcon
-            sx={{
+              sx={{
                 color: grey[700],
                 fontSize: 25,
                 "&:hover": {
-                color: grey[500],
+                  color: grey[500],
                 }
               }}
               onClick={() => dispatch(actions.archiveTodo(todo.id))} />}
@@ -70,15 +68,18 @@ export default function TodoListItem({ todo }) {
                 color: grey[700],
                 fontSize: 25,
                 "&:hover": {
-                color: grey[500],
+                  color: grey[500],
                 }
               }}
               onClick={() => dispatch(actions.deleteTodo(todo.id))} />}
-          </IconButton>      
+          </IconButton>
         </ButtonsWrapper>
         :
-        <UnpackButton onClick={() => dispatch(actions.unpackTodo(todo.id))}>Unpack</UnpackButton>}
-    </Wrapper>  
+        <ButtonsWrapper>
+          <UnpackButton onClick={() => dispatch(actions.unpackTodo(todo.id))}>Unpack</UnpackButton>
+        </ButtonsWrapper>}
+        
+    </>  
   )
 } 
 
