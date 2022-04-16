@@ -11,7 +11,7 @@ export default function TodoListItem({ item }) {
   return (
     <>
       <IconWrapper>
-          {<Icon width="18" height="18" fill="black" category = {item.category} />}
+          {<Icon width="20" height="20" fill="whitesmoke" category = {item.category} />}
       </IconWrapper>
       <Category>{item.category}</Category>
       <StatusWrapper>

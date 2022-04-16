@@ -19,11 +19,11 @@ const icons = [
   }
 ];
 
-const Icon = ({ category, width, height }) => {
+const Icon = ({ category, width, height, fill }) => {
     console.log('item', category)
     const IconRender = icons.find(option => option.category === category).icon
     return (
-        <IconRender width={width} height={ height }/>
+        <IconRender width={width} height={height} fill={ fill }/>
     )
 }
 

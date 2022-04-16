@@ -8,7 +8,6 @@ import Icon from '../Icon';
 import { ReactComponent as EditIcon } from '../../icons/edit.svg';
 import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
 import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
-import { ReactComponent as TodoIcon } from '../../icons/buy.svg';
 
 import {
   Wrapper,
@@ -28,7 +27,7 @@ export default function TodoListItem({ todo }) {
   return (
     <Wrapper>
       <IconWrapper>
-        {<Icon width="18" height="18" fill="black" category = {todo.category} />}
+        {<Icon width="20" height="20" fill="whitesmoke" category = {todo.category} />}
       </IconWrapper>
       <Name>{todo.name}</Name>
       <Date>{todo.date}</Date>

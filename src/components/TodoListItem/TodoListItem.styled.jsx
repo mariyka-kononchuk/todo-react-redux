@@ -5,6 +5,9 @@ export const Wrapper = styled.div`
 `;
 
 export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
   margin-top: auto;
