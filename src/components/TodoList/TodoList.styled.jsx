@@ -72,8 +72,14 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  margin-bottom: 20px;
   list-style: none;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  background-color: rgb(241, 241, 252);
 `;
 
 export const Button = styled.button`

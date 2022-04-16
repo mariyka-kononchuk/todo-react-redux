@@ -2,9 +2,6 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
-  padding-left: 10px;
-  padding-right: 25px;
-  background-color: rgb(241, 241, 252);
 `;
 
 export const IconWrapper = styled.div`
@@ -29,7 +26,8 @@ export const IconWrapper = styled.div`
 `;
 
 export const Name = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100px;
 
   font-size: 12px;
@@ -49,7 +47,8 @@ export const Name = styled.p`
 `;
 
 export const Date = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100px;
 
   font-size: 12px;
@@ -67,7 +66,8 @@ export const Date = styled.p`
 `;
 
 export const Category = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100px;
 
   font-size: 12px;
@@ -85,6 +85,8 @@ export const Category = styled.p`
 `;
 
 export const Content = styled.p`
+  display: flex;
+  align-items: center;
   margin-right: 10px;
   white-space: nowrap;
   width: 80px;
@@ -120,7 +122,8 @@ export const Content = styled.p`
 `;
 
 export const Dates = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100px;
 
   font-size: 12px;

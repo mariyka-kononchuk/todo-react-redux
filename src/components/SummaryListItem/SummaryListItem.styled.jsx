@@ -28,9 +28,13 @@ export const IconWrapper = styled.div`
 `;
 
 export const Category = styled.p`
-  display: block;
+  /* margin: 0;
+  padding: 0; */
+  display: flex;
+  align-items: center;
   width: 100px;
-
+  /* text-align: center; */
+  /* vertical-align: middle; */
   font-size: 12px;
   font-weight: 700;
   line-height: 1.167;
@@ -43,12 +47,13 @@ export const Category = styled.p`
   }
 
   @media screen and (min-width: 1024px) {
-    width: 180px;
+    width: 145px;
   }
 `;
 
 export const Status = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 145px;
 
   font-size: 12px;
