@@ -43,11 +43,11 @@ export default function TodoList() {
                 <InfoTitle>Dates</InfoTitle>
                 <ButtonsWrapper>
                     <StyledLink to="/archive">
-                        {<ArchiveIcon width="18" height="18" fill="black"  />}
+                        {<ArchiveIcon width="24" height="24" fill="whitesmoke"  />}
                     </StyledLink>
-                <IconButton>
-                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteAllTodo())} />}
-                </IconButton>
+                    <IconButton>
+                        {<DeleteIcon width="24" height="24" fill="whitesmoke" onClick={() => dispatch(actions.deleteAllTodo())} />}
+                    </IconButton>
                 </ButtonsWrapper>
             </HeaderWrapper>
             <List>

@@ -4,6 +4,8 @@ export const HeaderWrapper = styled.div`
   display: flex;
   margin-bottom: 20px;
   padding-left: 18px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 
   font-size: 14px;
   font-weight: 700;
@@ -37,18 +39,15 @@ export const StatusWrapper = styled.div`
 `;
 
 export const Category = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 145px;
 `;
 
 export const Status = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100px;
-
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.167;
-  letter-spacing: 0.06em;
 
   @media screen and (min-width: 768px) {
     width: 80px;

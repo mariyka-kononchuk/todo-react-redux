@@ -5,6 +5,8 @@ export const HeaderWrapper = styled.div`
   display: flex;
   margin-bottom: 20px;
   padding-left: 18px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 
   font-size: 14px;
   font-weight: 700;
@@ -25,7 +27,8 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Name = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100px;
 
   @media screen and (min-width: 768px) {
@@ -38,7 +41,8 @@ export const Name = styled.p`
 `;
 
 export const InfoTitle = styled.p`
-  display: block;
+  display: flex;
+  align-items: center;
   width: 50px;
 
   @media screen and (min-width: 768px) {
@@ -52,6 +56,7 @@ export const InfoTitle = styled.p`
 
 export const ButtonsWrapper = styled.div`
   display: flex;
+  align-items: center;
   margin-left: 20px;
 
   @media screen and (min-width: 768px) {
@@ -62,7 +67,9 @@ export const ButtonsWrapper = styled.div`
     margin-left: 74px;
   }
 `;
-export const StyledLink = styled(NavLink)``;
+export const StyledLink = styled(NavLink)`
+  margin-right: 10px;
+`;
 
 export const List = styled.ul`
   margin: 0;
