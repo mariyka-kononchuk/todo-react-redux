@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Form = styled.form`
+  position: relative;
   display: flex;
   padding-top: 20px;
   color: rgb(165, 163, 163);
@@ -72,7 +73,7 @@ export const Button = styled.button`
   }
 
   @media screen and (min-width: 1024px) {
-    width: 100px;
+    width: 105px;
   }
 
   cursor: pointer;

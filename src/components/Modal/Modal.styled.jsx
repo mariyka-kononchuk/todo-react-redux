@@ -50,3 +50,9 @@ export const WindowModal = styled.div`
     min-height: 120px;
   }
 `;
+
+export const IconWrapper = styled.div`
+  position: absolute;
+  top: 7px;
+  right: 3px;
+`;

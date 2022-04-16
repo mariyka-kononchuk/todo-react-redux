@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
-import {Overlay, WindowModal} from './Modal.styled';
+import CloseIcon from '@mui/icons-material/Close';
+import { grey } from '@mui/material/colors';
 import { toggleModal } from '../../redux/modal/modal-action';
 import { deleteEditItem } from '../../redux/todo/todo-action';
 import IconButton from '../IconButton';
-import { ReactComponent as CloseIcon } from '../../icons/close.svg';
-const modalRoot = document.querySelector('#modal-root');
+import {Overlay, WindowModal, IconWrapper} from './Modal.styled';
 
+const modalRoot = document.querySelector('#modal-root');
 
 function Modal({children }) {
     const dispatch = useDispatch();
@@ -34,17 +35,26 @@ function Modal({children }) {
         }
     }
 
-        return createPortal(
-            <Overlay onClick={handleBackdropClick}>
-                <WindowModal>
+    return createPortal(
+        <Overlay onClick={handleBackdropClick}>
+            <WindowModal>
+                <IconWrapper>
                     <IconButton>
-                        {<CloseIcon width="18" height="18" fill="black" onClick={() =>closeModal()} />}
+                        {<CloseIcon
+                            sx={{
+                                color: grey[900],
+                                fontSize: 25,
+                                "&:hover": {
+                                color: grey[500],
+                                }
+                            }}
+                            onClick={() => closeModal()} />}
                     </IconButton>
-                    {children}
-                </WindowModal>
-            </Overlay>, modalRoot
-        )
-     
+                </IconWrapper>
+                {children}
+            </WindowModal>
+        </Overlay>, modalRoot
+    )   
 }
 
 // Modal.propTypes = {
