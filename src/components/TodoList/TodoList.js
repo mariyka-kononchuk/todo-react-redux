@@ -33,7 +33,6 @@ export default function TodoList() {
     if (location.pathname === '/archive') {
         todos = archivedTodos;
     }
-    console.log(todos)
     return (
         <>
             <HeaderWrapper>

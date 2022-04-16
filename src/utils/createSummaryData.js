@@ -20,19 +20,11 @@ export function createSummaryData(data) {
     if (totalArchived === 0) {
       totalArchived = ''
     }
-
-    // let url = '';
-    // for (const icon of icons) {
-    //   if (name === icon.name) {
-    //     url = icon.svgUrl;
-    //   }
-    // }
     
     const newTotalData = {
       category: name,
       active: totalActive,
       archived: totalArchived,
-      //svgUrl:url
     }
     totalData.push(newTotalData);
     for (const item of totalData) {
