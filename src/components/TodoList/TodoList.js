@@ -34,7 +34,7 @@ export default function TodoList() {
     }
     console.log(todos)
     return (
-        <div>
+        <>
             <HeaderWrapper>
                 <Name>Name</Name>
                 <InfoTitle>Created</InfoTitle>
@@ -62,7 +62,7 @@ export default function TodoList() {
                 <StyledLink to="/home">
                     <Button>Home</Button>
                 </StyledLink>}
-        </div>
+        </>
     )
 }
 

@@ -1,4 +1,3 @@
-//with Redux Toolkit
 import { configureStore, getDefaultMiddleware, combineReducers } from "@reduxjs/toolkit";
 import logger from 'redux-logger';
 import {
@@ -31,7 +30,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     todos: todoReducer,
-    modal:modalReducer
+    modal: modalReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -46,12 +45,3 @@ const persistor = persistStore(store);
 
 export default { store, persistor };
 
-//without Redux Toolkit
-//import { combineReducers } from "redux";
-//import { composeWithDevTools } from 'redux-devtools-extension';
-
-// const rootReducer = combineReducers({
-//     contacts: contactsReducer
-// })
-
-//const store = createStore(rootReducer, composeWithDevTools());

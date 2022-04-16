@@ -63,6 +63,7 @@ export const ButtonsWrapper = styled.div`
   }
 `;
 export const StyledLink = styled(NavLink)``;
+
 export const List = styled.ul`
   margin: 0;
   padding: 0;
