@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   background-color: rgb(241, 241, 252);
 `;
 
-export const Icon = styled.div`
+export const IconWrapper = styled.div`
   width: 20px;
   height: 20px;
   margin-top: auto;
