@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import dateFormat from "dateformat";
 import * as actions from '../../redux/todo/todo-action';
+import { getEditItem, getEditItemStatus } from '../../redux/todo/todo-selectors';
+import { toggleModal } from '../../redux/modal/modal-action';
 import {
     Form,
     Input,
@@ -14,9 +16,23 @@ import {
 
 export default function TodoForm() {
     const dispatch = useDispatch();
+    const isEditedTodo = useSelector(getEditItemStatus);
+    const editItem = useSelector(getEditItem);
+    
     const [name, setName] = useState('');
     const [category, setCategory] = useState('Task');
     const [content, setContent] = useState('');
+    const [nameButton, setNameButton] = useState('Create note');
+
+    useEffect(() => {
+        if (isEditedTodo) {
+            setName(editItem.name);
+            setCategory(editItem.category);
+            setContent(editItem.content);
+            setNameButton('Save changes');
+            console.log('name', editItem.name)
+        }
+    }, [isEditedTodo]);
     
     const handleChange = e => {
         const { name, value } = e.target;
@@ -45,7 +61,15 @@ export default function TodoForm() {
              dates = contentDates.join(', ');
          }
          
-        dispatch(actions.addTodo({name, category, content, dates}))
+         if (isEditedTodo) {
+            const id = editItem.id;
+             dispatch(actions.editTodo({ id, name, category, content, dates }));
+             dispatch(actions.deleteEditItem());
+             dispatch(toggleModal());
+         } else {
+             dispatch(actions.addTodo({name, category, content, dates}))
+        }
+        
         reset();
     }
 
@@ -93,7 +117,7 @@ export default function TodoForm() {
                 value={content}
                 onChange={handleChange}
                 placeholder="Content..."></Textarea>
-            <Button type="submit">Create note</Button>
+            <Button type="submit">{nameButton}</Button>
         </Form>
         
         
