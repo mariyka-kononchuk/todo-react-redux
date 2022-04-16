@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
+export const StatusWrapper = styled.div`
   display: flex;
   margin-left: 200px;
   color: rgb(92, 90, 90);
 `;
 
-export const Icon = styled.div`
+export const IconWrapper = styled.div`
   width: 20px;
   height: 20px;
   margin-top: auto;

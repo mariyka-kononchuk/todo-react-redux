@@ -1,38 +1,23 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import * as actions from '../../redux/todo/todo-action';
-import { toggleModal } from '../../redux/modal/modal-action';
-
-import IconButton from '../IconButton';
-import { ReactComponent as EditIcon } from '../../icons/edit.svg';
-import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
-import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
-import { ReactComponent as TodoIcon } from '../../icons/buy.svg';
-
+import Icon from '../Icon';
 import {
-  Wrapper,
+  IconWrapper,
+  StatusWrapper,
   Category,
   Status
 } from './SummaryListItem.styled';
 
 export default function TodoListItem({ item }) {
-  
   return (
     <>
-      {/* <Icon>
-        <IconButton>
-          {<TodoIcon width="18" height="18" fill="black" />}
-        </IconButton>
-      </Icon> */}
-      
+      <IconWrapper>
+          {<Icon width="18" height="18" fill="black" category = {item.category} />}
+      </IconWrapper>
       <Category>{item.category}</Category>
-      <Wrapper>
+      <StatusWrapper>
           <Status>{item.active}</Status>
           <Status>{item.archived}</Status>
-      </Wrapper>
-      
-
+      </StatusWrapper>
     </>  
   )
 } 

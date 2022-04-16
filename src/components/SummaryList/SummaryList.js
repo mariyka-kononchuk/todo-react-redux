@@ -1,13 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import IconButton from '../IconButton';
-import { ReactComponent as EditIcon } from '../../icons/edit.svg';
-import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
-import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
-import { ReactComponent as TodoIcon } from '../../icons/buy.svg';
 import { getSummaryData} from '../../redux/todo/todo-selectors';
 import SummaryListItem from '../SummaryListItem';
-
 import {
   HeaderWrapper,
   Category,
@@ -19,7 +13,7 @@ import {
 
 export default function Summary() {
   const summaryData = useSelector(getSummaryData);
-  console.log('summary', summaryData)
+
   return (
     <>
       <HeaderWrapper>
