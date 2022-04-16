@@ -5,8 +5,8 @@ export const HeaderWrapper = styled.div`
   display: flex;
   margin-bottom: 20px;
   padding-left: 18px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   font-size: 14px;
   font-weight: 700;

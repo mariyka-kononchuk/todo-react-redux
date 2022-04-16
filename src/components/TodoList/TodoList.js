@@ -4,8 +4,9 @@ import { useLocation } from 'react-router-dom';
 import * as actions from '../../redux/todo/todo-action';
 import {toggleModal} from '../../redux/modal/modal-action';
 import IconButton from '../IconButton';
-import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
-import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ArchiveIcon from '@mui/icons-material/Archive';
+import { grey } from '@mui/material/colors';
 import {
     HeaderWrapper,
     Name,
@@ -43,10 +44,25 @@ export default function TodoList() {
                 <InfoTitle>Dates</InfoTitle>
                 <ButtonsWrapper>
                     <StyledLink to="/archive">
-                        {<ArchiveIcon width="24" height="24" fill="whitesmoke"  />}
+                        {<ArchiveIcon
+                        sx={{
+                            color: grey[100],
+                            fontSize: 32,
+                            "&:hover": {
+                            color: grey[700],
+                        }
+                        }}/>}
                     </StyledLink>
                     <IconButton>
-                        {<DeleteIcon width="24" height="24" fill="whitesmoke" onClick={() => dispatch(actions.deleteAllTodo())} />}
+                        {<DeleteIcon
+                        sx={{
+                            color: grey[100],
+                            fontSize: 32,
+                            "&:hover": {
+                            color: grey[700],
+                        }
+                            }}
+                            onClick={() => dispatch(actions.deleteAllTodo())} />}
                     </IconButton>
                 </ButtonsWrapper>
             </HeaderWrapper>

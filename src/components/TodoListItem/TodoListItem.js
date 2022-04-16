@@ -1,13 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { grey } from '@mui/material/colors';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ArchiveIcon from '@mui/icons-material/Archive';
+import EditIcon from '@mui/icons-material/Edit';
 import * as actions from '../../redux/todo/todo-action';
 import { toggleModal } from '../../redux/modal/modal-action';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
-import { ReactComponent as EditIcon } from '../../icons/edit.svg';
-import { ReactComponent as ArchiveIcon } from '../../icons/archive.svg';
-import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
+
 
 import {
   Wrapper,
@@ -38,16 +40,40 @@ export default function TodoListItem({ todo }) {
       {location.pathname === '/home' ?
         <ButtonsWrapper>
           <IconButton>
-              {<EditIcon width="18" height="18" fill="black" onClick={() => {
+            {<EditIcon
+              sx={{
+                color: grey[700],
+                fontSize: 25,
+                "&:hover": {
+                color: grey[500],
+                }
+              }}
+              onClick={() => {
                 dispatch(toggleModal());
                 dispatch(actions.addEditItem(todo));
               }} />}
           </IconButton>
           <IconButton>
-            {<ArchiveIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.archiveTodo(todo.id))} />}
+            {<ArchiveIcon
+            sx={{
+                color: grey[700],
+                fontSize: 25,
+                "&:hover": {
+                color: grey[500],
+                }
+              }}
+              onClick={() => dispatch(actions.archiveTodo(todo.id))} />}
           </IconButton>
           <IconButton>
-            {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteTodo(todo.id))} />}
+            {<DeleteIcon
+              sx={{
+                color: grey[700],
+                fontSize: 25,
+                "&:hover": {
+                color: grey[500],
+                }
+              }}
+              onClick={() => dispatch(actions.deleteTodo(todo.id))} />}
           </IconButton>      
         </ButtonsWrapper>
         :
