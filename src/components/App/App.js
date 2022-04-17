@@ -7,13 +7,13 @@ import ArchiveView from '../../views/ArchiveView';
 export default function App() {
     return (
       <Container>
-        <Suspense>
+        {/* <Suspense> */}
           <Routes>
-              <Route exact path="/" element={<Navigate replace to="/home" />} />
-              <Route exact path="/home" element={<HomeView />}/>
-              <Route exact path="/archive" element={<ArchiveView />}/>
+              <Route path="/" element={<Navigate replace to="/home" />} />
+              <Route path="/home" element={<HomeView />}/>
+              <Route path="/archive" element={<ArchiveView />}/>
           </Routes>
-        </Suspense>
+        {/* </Suspense> */}
       </Container>
     );
 }
