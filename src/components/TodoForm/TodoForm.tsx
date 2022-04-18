@@ -33,7 +33,7 @@ export default function TodoForm() {
         }
     }, [isEditedTodo]);
     
-    const handleChange = e => {
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         switch (name) {
             case 'name':
