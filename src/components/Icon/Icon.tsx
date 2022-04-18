@@ -6,8 +6,8 @@ import { ReactComponent as RandomThought } from '../../icons/mind.svg';
 
 interface Props {
   category: string;
-  width: number;
-  height: number;
+  width: string;
+  height: string;
   fill?: string
 };
 

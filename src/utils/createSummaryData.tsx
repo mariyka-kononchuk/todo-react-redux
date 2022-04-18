@@ -1,12 +1,24 @@
+import ITodo from '../interfaces/todo.interface';
 const categoryName = ['Task', 'Idea', 'Random Thought'];
 
-export function createSummaryData(data) {
-  const totalData = [];
+interface Props {
+  data: ITodo[];
+  //map: () => [];
+}
+
+interface IData {
+  category: string;
+  active: string | number;
+  archived: string | number;
+}
+
+export function createSummaryData (data:Props) {
+  const totalData:IData[] = [];
   const newArray = data.map(e => { return { category: e.category, status: e.status } });
   
   for (const name of categoryName) {
-    let totalActive = 0;
-    let totalArchived = 0;
+    let totalActive:string | number = 0;
+    let totalArchived: string | number = 0;
     for (const item of newArray) {
       if (item.category === name && item.status === 'active') {
         totalActive++;

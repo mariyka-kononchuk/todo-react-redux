@@ -8,7 +8,6 @@ import {
     Form,
     Input,
     Select,
-    Option,
     Textarea,
     Button
 } from './TodoForm.styled';

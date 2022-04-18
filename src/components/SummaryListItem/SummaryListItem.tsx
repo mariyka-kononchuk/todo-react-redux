@@ -1,5 +1,6 @@
 import React from 'react';
-import Icon from '../Icon/Icon.tsx';
+import Icon from '../Icon';
+import ISummary from '../../interfaces/summary.interface';
 import {
   IconWrapper,
   StatusWrapper,
@@ -7,7 +8,10 @@ import {
   Status
 } from './SummaryListItem.styled';
 
-export default function TodoListItem({ item }) {
+interface Props {
+  item: ISummary;
+}
+export default function SummaryListItem({ item }:Props) {
   return (
     <>
       <IconWrapper>

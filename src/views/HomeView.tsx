@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import Section from '../components/Section';
+import Section from '../components/Section/Section';
 import TodoList from '../components/TodoList';
 import Modal from '../components/Modal';
 import TodoForm from '../components/TodoForm';
-import SummaryList from '../components/SummaryList';
+import SummaryList from '../components/SummaryList/SummaryList';
 import { getModalStatus } from '../redux/modal/modal-selectors';
 
 

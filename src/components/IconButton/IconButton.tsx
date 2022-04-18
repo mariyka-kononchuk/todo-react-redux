@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 //import PropTypes from 'prop-types';
 import {Button} from './IconButton.styled';
 
-type Props = {
+interface Props  {
   children: React.ReactNode;
   onClick: () => void;
 };
