@@ -1,7 +1,9 @@
 const categoryName = ['Task', 'Idea', 'Random Thought'];
+
 export function createSummaryData(data) {
   const totalData = [];
-  const newArray = data.map(e => { return { category: e.category, status: e.status} });
+  const newArray = data.map(e => { return { category: e.category, status: e.status } });
+  
   for (const name of categoryName) {
     let totalActive = 0;
     let totalArchived = 0;
@@ -27,6 +29,7 @@ export function createSummaryData(data) {
       archived: totalArchived,
     }
     totalData.push(newTotalData);
+    
     for (const item of totalData) {
         const index = totalData.findIndex(item => item.active === '' && item.archived === '');
         if (index !== -1) {
