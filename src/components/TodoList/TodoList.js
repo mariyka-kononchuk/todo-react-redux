@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import * as actions from '../../redux/todo/todo-action';
 import {toggleModal} from '../../redux/modal/modal-action';
-import IconButton from '../IconButton';
+import IconButton from '../IconButton/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import { grey } from '@mui/material/colors';

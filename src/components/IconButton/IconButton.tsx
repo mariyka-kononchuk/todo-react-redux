@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 //import PropTypes from 'prop-types';
 import {Button} from './IconButton.styled';
 
-const IconButton = ({ children, onClick }) => {
+type Props = {
+  children: React.ReactNode;
+  onClick: () => void;
+};
+
+//onClick: React.FunctionComponent;
+
+const IconButton:FC<Props> = ({ children, onClick }) => {
     return (
     <Button type ="button" onClick={onClick}>
         {children}
@@ -19,4 +26,4 @@ const IconButton = ({ children, onClick }) => {
 //     children: PropTypes.node
 // }
 
-export default IconButton
+export default IconButton; 

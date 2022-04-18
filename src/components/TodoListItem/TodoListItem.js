@@ -7,8 +7,8 @@ import ArchiveIcon from '@mui/icons-material/Archive';
 import EditIcon from '@mui/icons-material/Edit';
 import * as actions from '../../redux/todo/todo-action';
 import { toggleModal } from '../../redux/modal/modal-action';
-import IconButton from '../IconButton';
-import Icon from '../Icon';
+import IconButton from '../IconButton/IconButton';
+import Icon from '../Icon/Icon.tsx';
 
 import {
   IconWrapper,
@@ -27,7 +27,7 @@ export default function TodoListItem({ todo }) {
   return (
     <>
       <IconWrapper>
-        {<Icon width="20" height="20" fill="whitesmoke" category = {todo.category} />}
+        {/* {<Icon width="20" height="20" fill="whitesmoke" category = {todo.category} />} */}
       </IconWrapper>
       <Name>{todo.name}</Name>
       <Date>{todo.date}</Date>

@@ -1,8 +1,15 @@
 import React from 'react';
-import { Button } from './Icon';
+//import { Button } from './Icon';
 import { ReactComponent as Task } from '../../icons/buy.svg';
 import { ReactComponent as Idea } from '../../icons/lamp.svg';
 import { ReactComponent as RandomThought } from '../../icons/mind.svg';
+
+interface Props {
+  category: string;
+  width: number;
+  height: number;
+  fill?: string
+};
 
 const icons = [
   {
@@ -19,11 +26,11 @@ const icons = [
   }
 ];
 
-const Icon = ({ category, width, height, fill }) => {
-    const IconRender = icons.find(option => option.category === category).icon
-    return (
-        <IconRender width={width} height={height} fill={ fill }/>
-    )
+const Icon = ({ category, width, height, fill }:Props) => {
+    // const IconRender = icons.find(option => option.category === category).icon
+    // return (
+    //     <IconRender width={width} height={height} fill={fill}/>
+    // )
 }
 
-export default Icon
+export default Icon;

@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { grey } from '@mui/material/colors';
 import { toggleModal } from '../../redux/modal/modal-action';
 import { deleteEditItem } from '../../redux/todo/todo-action';
-import IconButton from '../IconButton';
+import IconButton from '../IconButton/IconButton';
 import {Overlay, WindowModal, IconWrapper} from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');

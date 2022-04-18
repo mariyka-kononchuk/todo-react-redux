@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon';
+import Icon from '../Icon/Icon.tsx';
 import {
   IconWrapper,
   StatusWrapper,
@@ -11,7 +11,7 @@ export default function TodoListItem({ item }) {
   return (
     <>
       <IconWrapper>
-          {<Icon width="20" height="20" fill="whitesmoke" category = {item.category} />}
+          {/* {<Icon width="20" height="20" fill="whitesmoke" category = {item.category} />} */}
       </IconWrapper>
       <Category>{item.category}</Category>
       <StatusWrapper>
@@ -22,14 +22,4 @@ export default function TodoListItem({ item }) {
   )
 } 
 
-
-
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onDeleteContact: (contactId) => dispatch(actions.deleteContact(contactId)),
-//   }
-// }
-
-//export default connect(null, mapDispatchToProps)(ContactListItem);
 
