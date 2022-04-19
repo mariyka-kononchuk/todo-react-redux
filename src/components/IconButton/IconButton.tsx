@@ -7,8 +7,6 @@ interface Props  {
   onClick: () => void;
 };
 
-//onClick: React.FunctionComponent;
-
 const IconButton:FC<Props> = ({ children, onClick }) => {
     return (
     <Button type ="button" onClick={onClick}>

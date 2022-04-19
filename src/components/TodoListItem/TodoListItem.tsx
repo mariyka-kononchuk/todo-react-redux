@@ -32,7 +32,7 @@ export default function TodoListItem({ todo }:Props) {
   return (
     <>
       <IconWrapper>
-        {/* {<Icon width="20" height="20" fill="whitesmoke" category = {todo.category} />} */}
+        {<Icon width="20" height="20" fill="whitesmoke" category = {todo.category} />}
       </IconWrapper>
       <Name>{todo.name}</Name>
       <Date>{todo.date}</Date>
