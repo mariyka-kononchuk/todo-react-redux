@@ -119,6 +119,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:hover {
+    width: 105px;
     background-color: rgb(165, 163, 163);
     color: white;
     border: 2px solid rgb(165, 163, 163);
@@ -126,6 +127,7 @@ export const Button = styled.button`
   }
 
   &:focus {
+    width: 105px;
     outline: none;
     border: 2px solid rgb(165, 163, 163);
     background-color: white;

@@ -3,7 +3,6 @@ const categoryName = ['Task', 'Idea', 'Random Thought'];
 
 interface Props {
   data: ITodo[];
-  //map: () => [];
 }
 
 interface IData {
@@ -12,9 +11,17 @@ interface IData {
   archived: string | number;
 }
 
+interface INewArray {
+  category: string;
+  status: string;
+}
+
+let newArray:INewArray[] = [];
 export function createSummaryData (data:Props) {
-  const totalData:IData[] = [];
-  const newArray = data.map(e => { return { category: e.category, status: e.status } });
+  const totalData: IData[] = [];
+  if (data instanceof Array) {
+    newArray = data.map(e => { return { category: e.category, status: e.status } });
+  }
   
   for (const name of categoryName) {
     let totalActive:string | number = 0;
