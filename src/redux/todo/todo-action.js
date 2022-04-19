@@ -2,6 +2,14 @@ import { createAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import dateFormat from "dateformat";
 
+// interface IEdit {
+//     id: string;
+//     name: string;
+//     category: string;
+//     content: string;
+//     dates?: string;
+// } 
+
 export const addTodo = createAction('app/addTodo', ({name,category, content, dates}) => ({
     payload: {
         id: uuidv4(),

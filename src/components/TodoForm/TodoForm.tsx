@@ -12,6 +12,8 @@ import {
     Button
 } from './TodoForm.styled';
 
+type Change = React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLTextAreaElement>;
+   
 
 export default function TodoForm() {
     const dispatch = useDispatch();
@@ -33,7 +35,8 @@ export default function TodoForm() {
         }
     }, [isEditedTodo]);
     
-    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    
+    const handleChange = (e: Change) => {
         const { name, value } = e.target;
         switch (name) {
             case 'name':
@@ -50,10 +53,10 @@ export default function TodoForm() {
         }
     }
 
-     const handleSubmit = e => {
+     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
          e.preventDefault();
          const datesFound = content.match(/\d{1,2}\D\d{1,2}\D(\d{4}|\d{2})/g);
-         let contentDates = [];
+         let contentDates:string[] = [];
          let dates = ''
          if (datesFound !== null) {
              datesFound.map(item => contentDates.push(dateFormat(item, "m/d/yyyy")))
@@ -62,7 +65,7 @@ export default function TodoForm() {
          
          if (isEditedTodo) {
             const id = editItem.id;
-             dispatch(actions.editTodo({ id, name, category, content, dates }));
+            //  dispatch(actions.editTodo({ id, name, category, content, dates }));
              dispatch(actions.deleteEditItem());
              dispatch(toggleModal());
          } else {
@@ -110,8 +113,8 @@ export default function TodoForm() {
                     <option value="Idea">Idea</option>
             </Select>
             <Textarea
-                rows="3"
-                type="text"
+                rows={3}
+                // type="text"
                 name="content"
                 value={content}
                 onChange={handleChange}

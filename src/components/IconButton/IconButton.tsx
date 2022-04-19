@@ -16,14 +16,4 @@ const IconButton:FC<Props> = ({ children, onClick }) => {
     </Button>)
 }
 
-// IconButton.defaultProps = {
-//     onClick: () => null,
-//     children: null,
-// };
-
-// IconButton.propTypes = {
-//     onClick: PropTypes.func,
-//     children: PropTypes.node
-// }
-
 export default IconButton; 

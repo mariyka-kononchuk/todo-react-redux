@@ -24,7 +24,6 @@ import {
 
 interface Props {
   todo: ITodo;
-  onClick: () => void;
 }
 
 export default function TodoListItem({ todo }:Props) {

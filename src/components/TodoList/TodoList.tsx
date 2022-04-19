@@ -6,6 +6,7 @@ import {toggleModal} from '../../redux/modal/modal-action';
 import IconButton from '../IconButton/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArchiveIcon from '@mui/icons-material/Archive';
+import ITodo from '../../interfaces/todo.interface';
 import { grey } from '@mui/material/colors';
 import {
     HeaderWrapper,
@@ -24,7 +25,7 @@ import { getActiveTodos, getArchiveTodos } from '../../redux/todo/todo-selectors
 export default function TodoList() {
     const activeTodos = useSelector(getActiveTodos);
     const archivedTodos = useSelector(getArchiveTodos);
-    let todos = [];
+    let todos: ITodo[] = [];
     const dispatch = useDispatch();
     const location = useLocation();
     if (location.pathname === '/home') {
@@ -52,7 +53,7 @@ export default function TodoList() {
                         }
                         }}/>}
                     </StyledLink>
-                    <IconButton>
+                    <IconButton onClick={() => dispatch(actions.deleteAllTodo())}>
                         {<DeleteIcon
                         sx={{
                             color: grey[100],
@@ -61,7 +62,7 @@ export default function TodoList() {
                             color: grey[700],
                         }
                             }}
-                            onClick={() => dispatch(actions.deleteAllTodo())} />}
+                             />}
                     </IconButton>
                 </ButtonsWrapper>
             </HeaderWrapper>
@@ -81,14 +82,5 @@ export default function TodoList() {
     )
 }
 
-
-
-// ContactList.propTypes = {
-//     todos: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             id: PropTypes.string,
-//         })
-//     ),
-// };
 
  
