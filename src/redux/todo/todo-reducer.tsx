@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-//import ITodo from '../../interfaces/todo.interface';
-import data from '../../data/todos.json';
+import ITodo from '../../interfaces/todo.interface';
+import initialData from '../../data/todos.json';
+
 import {
     addTodo,
     deleteTodo,
@@ -13,8 +14,8 @@ import {
     deleteEditItem,
 } from './todo-action'
 
-const items = createReducer(data, {
-    [addTodo]: (state, { payload }) => [payload, ...state],
+const items = createReducer(initialData, {
+    [addTodo]: (state:ITodo[], { payload }) => [payload, ...state],
     [deleteTodo]: (state, { payload }) =>
         state.filter(({ id }) => id !== payload),
     [deleteAllTodo]: (state) => [],
