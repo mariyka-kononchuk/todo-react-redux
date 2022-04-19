@@ -6,8 +6,7 @@
     "category": "Task",
     "content": "Tomatoes, bread",
     "dates": "",
-    "status": "active",
-    "svgUrl": "${sprite}#icon-buy"
+    "status": "active"
   },
   {
     "id": "id-2",
@@ -16,8 +15,7 @@
     "category": "Random Thought",
     "content": "The evolution is is based on the idea that all species? are related and gradually change over time",
     "dates": "",
-    "status": "active",
-    "svgUrl": "${sprite}#icon-mind"
+    "status": "active"
   },
   {
     "id": "id-3",
@@ -26,8 +24,7 @@
     "category": "Idea",
     "content": "Implement a new process at work, deadline - 10/5/2022",
     "dates": "10/5/2022",
-    "status": "active",
-    "svgUrl": "${sprite}#icon-lamp"
+    "status": "active"
   },
   {
     "id": "id-4",
@@ -36,8 +33,7 @@
     "category": "Task",
     "content": "The Lean Startup",
     "dates": "",
-    "status": "active",
-    "svgUrl": "${sprite}#icon-buy"
+    "status": "active"
   },
   {
     "id": "id-5",
@@ -46,8 +42,7 @@
     "category": "Idea",
     "content": "Contact tripadvisor 10/06/2022",
     "dates": "10/06/2022",
-    "status": "active",
-    "svgUrl": "${sprite}#icon-lamp"
+    "status": "active"
   },
   {
     "id": "id-6",
@@ -56,8 +51,7 @@
     "category": "Task",
     "content": "Buy wine, cheese and meat",
     "dates": "",
-    "status": "active",
-    "svgUrl": "${sprite}#icon-buy"
+    "status": "active"
   },
   {
     "id": "id-7",
@@ -66,7 +60,6 @@
     "category": "Task",
     "content": "Pay for second semester",
     "dates": "",
-    "status": "active",
-    "svgUrl": "${sprite}#icon-buy"
+    "status": "active"
   }
 ]

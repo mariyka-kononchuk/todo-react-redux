@@ -90,13 +90,3 @@ export default function TodoListItem({ todo }:Props) {
 } 
 
 
-
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onDeleteContact: (contactId) => dispatch(actions.deleteContact(contactId)),
-//   }
-// }
-
-//export default connect(null, mapDispatchToProps)(ContactListItem);
-

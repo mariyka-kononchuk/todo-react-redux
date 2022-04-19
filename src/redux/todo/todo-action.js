@@ -22,11 +22,19 @@ export const addTodo = createAction('app/addTodo', ({name,category, content, dat
     }   
 }))
 
-export const deleteTodo = createAction('app/deleteTodo', ({ id })=>({payload:id}));
+export const deleteTodo = createAction('app/deleteTodo', ({ id }) => ({ payload: id }));
 export const deleteAllTodo = createAction('app/deleteAllTodo');
 export const archiveTodo = createAction('app/archiveTodo', ({ id })=>({payload:id}));
 export const unpackTodo = createAction('app/unpackTodo', ({ id })=>({payload:id}));
-export const editTodo = createAction('app/editTodo');
+export const editTodo = createAction('app/editTodo',({id, name,category, content, dates}) => ({
+    payload: {
+        id,
+        name,
+        category,
+        content,
+        dates,
+    }   
+}));
 export const addEditItem = createAction('app/addEditItem',
 (data) => ({
     payload: {

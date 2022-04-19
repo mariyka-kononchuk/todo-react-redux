@@ -65,9 +65,9 @@ export default function TodoForm() {
          
          if (isEditedTodo) {
             const id = editItem.id;
-            //  dispatch(actions.editTodo({ id, name, category, content, dates }));
-             dispatch(actions.deleteEditItem());
-             dispatch(toggleModal());
+            dispatch(actions.editTodo({ id, name, category, content, dates }));
+            dispatch(actions.deleteEditItem());
+            dispatch(toggleModal());
          } else {
              dispatch(actions.addTodo({name, category, content, dates}))
         }
@@ -114,7 +114,6 @@ export default function TodoForm() {
             </Select>
             <Textarea
                 rows={3}
-                // type="text"
                 name="content"
                 value={content}
                 onChange={handleChange}
@@ -125,19 +124,3 @@ export default function TodoForm() {
         
     )
 }
-// const mapStateToProps = state => {
-//     return {
-//         contacts: state.contacts.items
-//     }
-// }
-
-// const mapDispatchToProps = dispatch => {
-   
-//   return {
-//     onAddContact: ({name, number}) => dispatch(actions.addContact({name, number})),
-//   }
-// }
-
-// SignupForm.propTypes = {
-//     onAddContact: PropTypes.func,
-// };

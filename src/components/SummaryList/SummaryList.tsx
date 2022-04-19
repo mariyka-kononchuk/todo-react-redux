@@ -35,13 +35,3 @@ export default function Summary() {
 } 
 
 
-
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onDeleteContact: (contactId) => dispatch(actions.deleteContact(contactId)),
-//   }
-// }
-
-//export default connect(null, mapDispatchToProps)(ContactListItem);
-

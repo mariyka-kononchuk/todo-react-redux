@@ -73,12 +73,13 @@ export const Button = styled.button`
   }
 
   @media screen and (min-width: 1024px) {
-    width: 105px;
+    width: 110px;
   }
 
   cursor: pointer;
 
   &:hover {
+    width: 112px;
     background-color: rgb(165, 163, 163);
     color: white;
     border: 2px solid rgb(165, 163, 163);
@@ -86,6 +87,7 @@ export const Button = styled.button`
   }
 
   &:focus {
+    width: 112px;
     outline: none;
     border: 2px solid rgb(165, 163, 163);
     background-color: white;

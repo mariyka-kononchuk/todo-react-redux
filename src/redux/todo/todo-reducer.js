@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import {createReducer} from '@reduxjs/toolkit'
+import { createReducer } from '@reduxjs/toolkit';
+//import ITodo from '../../interfaces/todo.interface';
 import data from '../../data/todos.json';
 import {
     addTodo,
