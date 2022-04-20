@@ -1,10 +1,6 @@
 import ITodo from '../interfaces/todo.interface';
 const categoryName = ['Task', 'Idea', 'Random Thought'];
 
-interface Props {
-  data: ITodo[];
-}
-
 interface IData {
   category: string;
   active: string | number;
@@ -16,8 +12,9 @@ interface INewArray {
   status: string;
 }
 
-let newArray:INewArray[] = [];
-export function createSummaryData (data:Props) {
+let newArray: INewArray[] = [];
+
+export function createSummaryData (data:ITodo[]) {
   const totalData: IData[] = [];
   if (data instanceof Array) {
     newArray = data.map(e => { return { category: e.category, status: e.status } });

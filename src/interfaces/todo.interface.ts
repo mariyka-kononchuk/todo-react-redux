@@ -5,4 +5,5 @@ export default interface ITodo {
     category: string;
     content: string;
     dates?: string;
+    status:string
 }

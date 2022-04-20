@@ -11,6 +11,15 @@ interface IData {
     isEdit?: boolean;
 } 
 
+// interface IAction {
+//     type: string;
+//     payload?: any;
+// }
+function withPayloadType<T>() {
+  return (t: T) => ({ payload: t })
+}
+createAction('test', withPayloadType<string>())
+
 export const addTodo = createAction('app/addTodo', ({name,category, content, dates}:IData) => ({
     payload: {
         id: uuidv4(),
