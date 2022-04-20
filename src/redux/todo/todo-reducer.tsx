@@ -16,24 +16,6 @@ import {
 
 const initialData: ITodo[] =  data ;
 
-
-// interface IAction {
-//     type: string;
-//     payload?: any;
-// }
-
-// const increment = createAction<number, 'increment'>('increment')
-// const decrement = createAction<number, 'decrement'>('decrement')
-// createReducer(0, (builder) =>
-//   builder
-//     .addCase(increment, (state, action) => {
-//       // action is inferred correctly here
-//     })
-//     .addCase(decrement, (state, action: PayloadAction<string>) => {
-//       // this would error out
-//     })
-// )
-
 const items = createReducer(initialData, (builder) =>
     builder 
         .addCase(addTodo, (state: ITodo[], { payload }: PayloadAction<ITodo>) => [payload, ...state])
@@ -52,16 +34,6 @@ const items = createReducer(initialData, (builder) =>
     ))
 )
 
-//     [addEditItem]: (state, { payload }) => payload,
-//     [deleteEditItem]: (state, { _ }) => initialState,
-interface IData {
-    id?: string;
-    name: string;
-    category: string;
-    content: string;
-    dates?: string;
-    isEdit?: boolean;
-} 
 interface IEditState {
     data?: ITodo;
     isEdited: boolean; 
@@ -84,41 +56,3 @@ export default combineReducers({
     editItem
 });
 
-// const items = createReducer(initialData, {
-//     [addTodo]: (state:ITodo[], { payload }:PayloadAction<ITodo>) => [payload, ...state],
-//     [deleteTodo]: (state:ITodo[], { payload }:PayloadAction<string>) =>
-//         state.filter(({ id }) => id !== payload),
-//     [deleteAllTodo]: (state:ITodo[]) => [],
-//     [archiveTodo]: (state:ITodo[], { payload }:PayloadAction<string>) =>
-//         state.map(todo =>
-//             todo.id === payload ? { ...todo, status: 'archived' } : todo,
-//         ),
-//     [unpackTodo]: (state:ITodo[], { payload }:PayloadAction<string>) =>
-//         state.map(todo =>
-//             todo.id === payload ? { ...todo, status: 'active' } : todo,
-//         ),
-//     [editTodo]: (state:ITodo[], { payload }:PayloadAction<ITodo>) =>
-//         state.map(todo =>
-//             todo.id === payload.id ?
-//                 {
-//                     ...todo,
-//                     name: payload.name,
-//                     category: payload.category,
-//                     content: payload.content,
-//                     dates: payload.dates,
-//                 }
-//                 : todo,
-//         )
-// });
-
-
-// const initialState = {isEdited:false};
-// const editItem = createReducer(initialState, {
-//     [addEditItem]: (state, { payload }) => payload,
-//     [deleteEditItem]: (state, { _ }) => initialState,
-// });
-
-// export default combineReducers({
-//     items,
-//     editItem
-// });

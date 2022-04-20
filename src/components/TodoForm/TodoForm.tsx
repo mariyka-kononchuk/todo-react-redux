@@ -27,14 +27,14 @@ export default function TodoForm() {
 
     useEffect(() => {
         if (isEditedTodo) {
-            setName(editItem.name);
-            setCategory(editItem.category);
-            setContent(editItem.content);
-            setNameButton('Save changes');
-            console.log('name', editItem.name)
+            if (editItem) {
+                setName(editItem.name);
+                setCategory(editItem.category);
+                setContent(editItem.content);
+                setNameButton('Save changes');
+            }
         }
     }, [isEditedTodo]);
-    
     
     const handleChange = (e: Change) => {
         const { name, value } = e.target;
@@ -64,7 +64,7 @@ export default function TodoForm() {
          }
          
          if (isEditedTodo) {
-            const id = editItem.id;
+            const id = editItem?.id;
             dispatch(actions.editTodo({ id, name, category, content, dates }));
             dispatch(actions.deleteEditItem());
             dispatch(toggleModal());
@@ -108,7 +108,5 @@ export default function TodoForm() {
                 placeholder="Content..."></Textarea>
             <Button type="submit">{nameButton}</Button>
         </Form>
-        
-        
     )
 }

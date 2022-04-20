@@ -11,15 +11,6 @@ interface IData {
     dates?: string;
 } 
 
-// interface IAction {
-//     type: string;
-//     payload?: any;
-// }
-// function withPayloadType<T>() {
-//   return (t: T) => ({ payload: t })
-// }
-// createAction('test', withPayloadType<string>())
-
 export const addTodo = createAction('app/addTodo', ({name,category, content, dates}:IData) => ({
     payload: {
         id: uuidv4(),
@@ -45,11 +36,6 @@ export const editTodo = createAction('app/editTodo',({id, name, category, conten
         dates,
     }   
 }));
-
-// interface IEdit {
-//     data?: ITodo;
-//     isEdited: boolean;
-// }
 
 export const addEditItem = createAction('app/addEditItem',
 (data:ITodo) => ({
