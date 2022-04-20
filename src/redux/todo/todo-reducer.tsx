@@ -47,49 +47,41 @@ const items = createReducer(initialData, (builder) =>
             state.map(todo =>
                 todo.id === payload ? { ...todo, status: 'active' } : todo,
             ))
-    //     .addCase(editTodo, ((state:ITodo[], { payload }:PayloadAction<ITodo>) =>
-    //         state.map(todo =>
-    //             todo.id === payload.id ?
-    //                 {
-    //                     ...todo,
-    //                     name: payload.name,
-    //                     category: payload.category,
-    //                     content: payload.content,
-    //                     dates: payload.dates,
-    //                 }
-    //                 : todo,
-    //         )
-    //     )
-    // )
+        .addCase(editTodo, (state:ITodo[], { payload }) =>
+            state.map(todo => todo.id === payload.id ?{...todo,name: payload.name,category: payload.category,content: payload.content,dates: payload.dates,}: todo
+    ))
 )
 
-
-
-
-//     [editTodo]: (state:ITodo[], { payload }:PayloadAction<ITodo>) =>
-//         state.map(todo =>
-//             todo.id === payload.id ?
-//                 {
-//                     ...todo,
-//                     name: payload.name,
-//                     category: payload.category,
-//                     content: payload.content,
-//                     dates: payload.dates,
-//                 }
-//                 : todo,
-//         )
-// });
-
-
-// const initialState = {isEdited:false};
-// const editItem = createReducer(initialState, {
 //     [addEditItem]: (state, { payload }) => payload,
 //     [deleteEditItem]: (state, { _ }) => initialState,
-// });
+interface IData {
+    id?: string;
+    name: string;
+    category: string;
+    content: string;
+    dates?: string;
+    isEdit?: boolean;
+} 
+interface IEditState {
+    data?: ITodo;
+    isEdited: boolean; 
+}
+const initialState:IEditState = { isEdited: false };
+
+interface IEdit {
+    data?: ITodo;
+    isEdited: boolean;
+}
+
+const editItem = createReducer(initialState, (builder) => 
+    builder
+        .addCase(addEditItem, (state: IEditState, { payload }:PayloadAction<IEdit>) => payload)
+        .addCase(deleteEditItem,  ((state) => initialState))        
+    )
 
 export default combineReducers({
     items,
-    //editItem
+    editItem
 });
 
 // const items = createReducer(initialData, {

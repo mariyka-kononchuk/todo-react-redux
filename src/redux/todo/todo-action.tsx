@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import dateFormat from "dateformat";
+import ITodo from '../../interfaces/todo.interface';
 
 interface IData {
     id?: string;
@@ -8,17 +9,16 @@ interface IData {
     category: string;
     content: string;
     dates?: string;
-    isEdit?: boolean;
 } 
 
 // interface IAction {
 //     type: string;
 //     payload?: any;
 // }
-function withPayloadType<T>() {
-  return (t: T) => ({ payload: t })
-}
-createAction('test', withPayloadType<string>())
+// function withPayloadType<T>() {
+//   return (t: T) => ({ payload: t })
+// }
+// createAction('test', withPayloadType<string>())
 
 export const addTodo = createAction('app/addTodo', ({name,category, content, dates}:IData) => ({
     payload: {
@@ -45,11 +45,17 @@ export const editTodo = createAction('app/editTodo',({id, name, category, conten
         dates,
     }   
 }));
+
+// interface IEdit {
+//     data?: ITodo;
+//     isEdited: boolean;
+// }
+
 export const addEditItem = createAction('app/addEditItem',
-(data:IData) => ({
+(data:ITodo) => ({
     payload: {
         data,
-        isEdit:true
+        isEdited:true
     }   
     }));
 export const deleteEditItem = createAction('app/deleteEditItem');
