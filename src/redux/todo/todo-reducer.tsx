@@ -18,19 +18,28 @@ const initialData: ITodo[] =  data ;
 
 const items = createReducer(initialData, (builder) =>
     builder 
-        .addCase(addTodo, (state: ITodo[], { payload }: PayloadAction<ITodo>) => [payload, ...state])
-        .addCase(deleteTodo, (state: ITodo[], { payload }: PayloadAction<string>) => state.filter(({ id }) => id !== payload))
-        .addCase(deleteAllTodo, ((state: ITodo[]) => []))
-        .addCase(archiveTodo, ((state:ITodo[], { payload }:PayloadAction<string>) =>
+        .addCase(addTodo, (state, { payload }: PayloadAction<ITodo>) => [payload, ...state])
+        .addCase(deleteTodo, (state, { payload }: PayloadAction<string>) => state.filter(({ id }) => id !== payload))
+        .addCase(deleteAllTodo, ((state) => []))
+        .addCase(archiveTodo, ((state, { payload }:PayloadAction<string>) =>
             state.map(todo =>
                 todo.id === payload ? { ...todo, status: 'archived' } : todo,
             )))
-        .addCase(unpackTodo, (state:ITodo[], { payload }:PayloadAction<string>) =>
+        .addCase(unpackTodo, (state, { payload }:PayloadAction<string>) =>
             state.map(todo =>
                 todo.id === payload ? { ...todo, status: 'active' } : todo,
             ))
-        .addCase(editTodo, (state:ITodo[], { payload }) =>
-            state.map(todo => todo.id === payload.id ?{...todo,name: payload.name,category: payload.category,content: payload.content,dates: payload.dates,}: todo
+        .addCase(editTodo, (state, { payload }) =>
+            state.map(todo => todo.id === payload.id ?
+                {
+                    ...todo,
+                    name:
+                    payload.name,
+                    category: payload.category,
+                    content: payload.content,
+                    dates: payload.dates,
+                }
+                : todo
     ))
 )
 
@@ -47,7 +56,7 @@ interface IEdit {
 
 const editItem = createReducer(initialState, (builder) => 
     builder
-        .addCase(addEditItem, (state: IEditState, { payload }:PayloadAction<IEdit>) => payload)
+        .addCase(addEditItem, (state, { payload }:PayloadAction<IEdit>) => payload)
         .addCase(deleteEditItem,  ((state) => initialState))        
     )
 
