@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/todo-react-redux/static/css/main.7ecb97a2.chunk.css",
-    "main.js": "/todo-react-redux/static/js/main.6dacd4f8.chunk.js",
-    "main.js.map": "/todo-react-redux/static/js/main.6dacd4f8.chunk.js.map",
+    "main.css": "/todo-react-redux/static/css/main.e8aea219.chunk.css",
+    "main.js": "/todo-react-redux/static/js/main.be0c0b04.chunk.js",
+    "main.js.map": "/todo-react-redux/static/js/main.be0c0b04.chunk.js.map",
     "runtime-main.js": "/todo-react-redux/static/js/runtime-main.bc90e064.js",
     "runtime-main.js.map": "/todo-react-redux/static/js/runtime-main.bc90e064.js.map",
     "static/css/2.c79dbdbc.chunk.css": "/todo-react-redux/static/css/2.c79dbdbc.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.2e9120e6.chunk.js.map": "/todo-react-redux/static/js/2.2e9120e6.chunk.js.map",
     "index.html": "/todo-react-redux/index.html",
     "static/css/2.c79dbdbc.chunk.css.map": "/todo-react-redux/static/css/2.c79dbdbc.chunk.css.map",
-    "static/css/main.7ecb97a2.chunk.css.map": "/todo-react-redux/static/css/main.7ecb97a2.chunk.css.map",
+    "static/css/main.e8aea219.chunk.css.map": "/todo-react-redux/static/css/main.e8aea219.chunk.css.map",
     "static/js/2.2e9120e6.chunk.js.LICENSE.txt": "/todo-react-redux/static/js/2.2e9120e6.chunk.js.LICENSE.txt",
     "static/media/buy.b5dacc5e.svg": "/todo-react-redux/static/media/buy.b5dacc5e.svg",
     "static/media/lamp.f18553b0.svg": "/todo-react-redux/static/media/lamp.f18553b0.svg",
@@ -20,7 +20,7 @@
     "static/js/runtime-main.bc90e064.js",
     "static/css/2.c79dbdbc.chunk.css",
     "static/js/2.2e9120e6.chunk.js",
-    "static/css/main.7ecb97a2.chunk.css",
-    "static/js/main.6dacd4f8.chunk.js"
+    "static/css/main.e8aea219.chunk.css",
+    "static/js/main.be0c0b04.chunk.js"
   ]
 }
