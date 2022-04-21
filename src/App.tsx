@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate} from 'react-router-dom';
-import Container from '../Container';
-import HomeView from '../../views/HomeView';
-import ArchiveView from '../../views/ArchiveView';
+import Container from './components/Container';
+import HomeView from './views/HomeView';
+import ArchiveView from './views/ArchiveView';
 
 export default function App() {
     return (

@@ -49,14 +49,9 @@ interface IEditState {
 }
 const initialState:IEditState = { isEdited: false };
 
-interface IEdit {
-    data?: ITodo;
-    isEdited: boolean;
-}
-
 const editItem = createReducer(initialState, (builder) => 
     builder
-        .addCase(addEditItem, (state, { payload }:PayloadAction<IEdit>) => payload)
+        .addCase(addEditItem, (state, { payload }:PayloadAction<IEditState>) => payload)
         .addCase(deleteEditItem,  ((state) => initialState))        
     )
 

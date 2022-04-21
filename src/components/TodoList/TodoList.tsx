@@ -21,7 +21,6 @@ import {
 import TodoListItem from '../TodoListItem';
 import { getActiveTodos, getArchiveTodos } from '../../redux/todo/todo-selectors';
 
-
 export default function TodoList() {
     const activeTodos = useSelector(getActiveTodos);
     const archivedTodos = useSelector(getArchiveTodos);

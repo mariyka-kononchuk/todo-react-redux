@@ -1,21 +1,5 @@
 import { createSummaryData } from '../../utils/createSummaryData';
-import ITodo from '../../interfaces/todo.interface';
-
-interface IModal  {
-    editedItem?: ITodo;
-    isOpen:boolean
-}
-
-interface IState {
-    todos: {
-        items: ITodo[];
-        editItem?: {
-            data?: ITodo;
-            isEdited: boolean;
-        }
-    };
-    modal: IModal;
-}
+import IState from '../../interfaces/state.interface';
 
 export const getActiveTodos = (state:IState) => state.todos.items.filter((todo => todo.status === 'active'));
 export const getArchiveTodos = (state:IState) => state.todos.items.filter((todo => todo.status === 'archived'));
