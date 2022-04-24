@@ -11,7 +11,7 @@ import {
 interface Props {
   item: ISummary;
 }
-export default function SummaryListItem({ item }:Props) {
+export default function SummaryListItem({ item }: Props) {
   return (
     <>
       <IconWrapper>
@@ -19,8 +19,8 @@ export default function SummaryListItem({ item }:Props) {
       </IconWrapper>
       <Category>{item.category}</Category>
       <StatusWrapper>
-          <Status>{item.active}</Status>
-          <Status>{item.archived}</Status>
+        {item.active === 0 ? <Status></Status> : <Status>{item.active}</Status>}
+        {item.archived === 0 ? <Status></Status>:  <Status>{item.archived}</Status>}
       </StatusWrapper>
     </>  
   )
