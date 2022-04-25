@@ -40,13 +40,13 @@ export default function TodoForm() {
         const { name, value } = e.target;
         switch (name) {
             case 'name':
-                setName(value.trim());
+                setName(value);
                 break;
             case 'category':
                 setCategory(value);
                 break;
             case 'content':
-                setContent(value.trim());
+                setContent(value);
                 break;
             default:
                 return;
@@ -59,7 +59,7 @@ export default function TodoForm() {
          let contentDates:string[] = [];
          let dates = ''
          if (datesFound !== null) {
-             datesFound.map(item => contentDates.push(dateFormat(item, "m/d/yyyy")))
+             contentDates = datesFound.map(item => dateFormat(item, "m/d/yyyy"))
              dates = contentDates.join(', ');
          }
          
@@ -69,7 +69,8 @@ export default function TodoForm() {
             dispatch(actions.deleteEditItem());
             dispatch(toggleModal());
          } else {
-             dispatch(actions.addTodo({name, category, content, dates}))
+             dispatch(actions.addTodo({ name, category, content, dates }));
+             dispatch(toggleModal());
         }
         
         reset();
